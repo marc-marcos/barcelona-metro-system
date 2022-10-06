@@ -23,6 +23,7 @@ background = pygame.Surface((WIDTH, HEIGHT))
 
 is_running = True
 
+
 while is_running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -33,6 +34,12 @@ while is_running:
     
     for j in links:
         j.drawLink(window_surface)
+
+    links[0].setTrainFirst(window_surface)
+    links[0].stepToSecond(window_surface)
     
+    
+    pygame.time.wait(100)
+
     background.fill(pygame.Color('#000000'))
     pygame.display.update()
